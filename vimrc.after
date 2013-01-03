@@ -1,0 +1,164 @@
+" Most basic settings
+set hidden
+set wrap          " wrap lines
+set tabstop=2     " a tab is four spaces
+set expandtab     " expand tab to spaces
+set backspace=indent,eol,start
+                  " allow backspacing over everything in insert mode
+set autoindent    " always set autoindenting on
+set copyindent    " copy the previous indentation on autoindenting
+set number        " always show line numbers
+set shiftwidth=2  " number of spaces to use for autoindenting
+set shiftround    " use multiple of shiftwidth when indenting with '<' and '>'
+set showmatch     " set show matching parenthesis
+set ignorecase    " ignore case when searching
+set smartcase     " ignore case if search pattern is all lowercase,
+                  "    case-sensitive otherwise
+set smarttab      " insert tabs on the start of a line according to
+                  "    shiftwidth, not tabstop
+set hlsearch      " highlight search terms
+set incsearch     " show search matches as you type
+set updatecount=100 " every 100 chars will vim save them to swap
+set cursorline    " Highlight the cursor line
+set list
+" set lcs=extends:>,precedes:<,tab:  ,trail:·
+
+" Set vim to have a large undo buffer
+set history=1000         " remember more commands and search history
+set undolevels=1000      " use many muchos levels of undo
+set wildignore=*.swp,*.bak,*.pyc,*.class
+set title                " change the terminal's title
+set visualbell           " don't beep
+set noerrorbells         " don't beep
+
+" Stop making backup file like you are in 70's, now you could use git
+set nobackup
+
+" Use file type plugins
+filetype plugin indent on
+"autocmd filetype python set expandtab
+
+" Add a shortcut Mappings for ":" and make j k more like the normal one
+nnoremap ; :
+"nnoremap j gj
+"nnoremap k gk
+
+" Easy window navigation
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
+" Easy to clear the hightlighting for search
+nmap <silent> <leader>/ :nohlsearch<CR>
+
+" Fold the select visual box
+vmap <silent> <leader>fo :fo<cr>
+
+" mapped in janus distribution
+"cmap w!! w !sudo tee % >/dev/null
+
+" Move cursor when inserting
+imap <C-h> <left>
+imap <C-j> <down>
+imap <C-k> <up>
+imap <C-l> <right>
+
+" NERDTree key binding
+nmap <leader>nt :NERDTreeToggle<cr>
+
+" 快捷键间隔时间
+" set timeoutlen=150
+
+" fcitx 远程调用
+"autocmd InsertLeave * call Fcitx2en()
+"autocmd InsertEnter * call Fcitx2zh()
+
+let g:user_zen_settings = {
+      \  'indentation' : '  ',
+      \  'perl' : {
+      \    'indentation' : '  ',
+      \    'aliases' : {
+      \      'req' : "require '|'"
+      \    },
+      \    'snippets' : {
+      \      'use' : "use strict\nuse warnings\n\n",
+      \      'w' : "warn \"${cursor}\";",
+      \    },
+      \  },
+      \'php' : {
+      \'extends' : 'html',
+      \'filters' : 'c',
+      \},
+      \'xml' : {
+      \'extends' : 'html',
+      \},
+      \'haml' : {
+      \'extends' : 'html',
+      \},
+      \}
+let g:user_zen_leader_key = '<c-e>'
+" Bind paste mode toggle to <Leader>p
+set pastetoggle=<leader>p
+nmap <Leader>P :Preview<CR>
+
+" CtrlP config
+" Bind CtrlPBuffer to <leader>b
+" nmap <silent> <Leader>b :CtrlPBuffer<CR>
+
+let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\.git$\|\.hg$\|\.svn$\|_site$',
+    \ 'file': '\.exe$\|\.so$\|\.dll$',
+    \ 'link': 'some$\|bad$\|symbolic$\|links$',
+    \ }
+let g:ctrlp_dotfiles = 1
+let g:ctrlp_max_depth = 10
+let g:ctrlp_extensions = ['changes', 'line', 'buffertag']
+let g:ctrlp_open_new_file = 'r'
+let g:ctrlp_open_multiple_files = '2vr'
+
+
+" let g:ctrlp_user_command = [repo_marker, vcs_ls_command, fallback_command]
+" let g:ctrlp_user_command = ['.hg/', 'hg --cwd %s locate -I .']
+" let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files']
+
+" Search for selected text, forwards or backwards.
+vnoremap <silent> * :<C-U>
+  \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
+  \gvy/<C-R><C-R>=substitute(
+  \escape(@", '/\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
+  \gV:call setreg('"', old_reg, old_regtype)<CR>
+vnoremap <silent> # :<C-U>
+  \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
+  \gvy?<C-R><C-R>=substitute(
+  \escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
+  \gV:call setreg('"', old_reg, old_regtype)<CR>
+
+" color for vim with noGUI
+color default
+set modeline
+
+" Perfer LaTeX
+let g:tex_flavor = "latex"
+let g:plaintex_delimiters = 1
+" let g:tex_fold_enabled=1
+
+" remove space at each line when saving
+" autocmd BufWritePre * :%s/\s\+$//e
+
+" VIM 7.3+ has support for highlighting a specified column.
+" if exists('+colorcolumn')
+"     set colorcolumn=80
+" else
+"     " Emulate
+"     au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%80v.\+', -1)
+" endif
+set encoding=utf-8 fileencodings=ucs-bom,utf-8,cp936
+
+"Ctags 索引配置
+colorscheme wombat256
+set tags+=/Users/crhan/.rvm/gems/ruby-1.9.3-p125/tags
+nmap <leader>rr :!ctags --extra=+f --exclude=.git --exclude=log -R *
+
+
+source ~/workspace/vim.rc
