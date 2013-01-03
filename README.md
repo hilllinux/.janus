@@ -1,7 +1,6 @@
 janus
 ======
-
-vimrc management by janus
+Vimrc management by janus
 
 For set up the janus:
 curl -Lo- https://bit.ly/janus-bootstrap | bash
