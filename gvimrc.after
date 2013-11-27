@@ -10,4 +10,20 @@ nmap <leader>ll :TagbarToggle<cr>
 let g:winManagerWindowLayout='FileExplorer'
 nmap <leader>wm :WMToggle<cr>
 "source  ~/.iab.rc
+"
+if has("cscope")
+  set cscopequickfix=s-,g-,c-,d-,t-,e-,f-,i-
+  if filereadable("cscope.out")
+      cs add ./cscope.out
+  endif
+  set csverb
+endif
 
+if filereadable("tags")
+  set tags=./tags; 
+endif
+set autochdir
+set autoread "auto load after modified
+set tabstop=4                " 设置Tab键的宽度        [等同的空格个数]  
+set shiftwidth=4  
+set expandtab
