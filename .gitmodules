@@ -22,3 +22,9 @@
 [submodule "vim-less"]
 	path = vim-less
 	url = https://github.com/groenewege/vim-less
+[submodule "winmanager.vim"]
+	path = winmanager.vim
+	url = https://github.com/vim-scripts/winmanager.vim
+[submodule "winmanager"]
+	path = winmanager
+	url = https://github.com/vim-scripts/winmanager

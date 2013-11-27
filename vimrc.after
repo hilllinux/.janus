@@ -139,8 +139,8 @@ color default
 set modeline
 
 " Perfer LaTeX
-let g:tex_flavor = "latex"
-let g:plaintex_delimiters = 1
+"let g:tex_flavor =\"latex"
+"let g:plaintex_delimiters = 1
 " let g:tex_fold_enabled=1
 
 " remove space at each line when saving
@@ -157,8 +157,8 @@ set encoding=utf-8 fileencodings=ucs-bom,utf-8,cp936
 
 "Ctags 索引配置
 colorscheme wombat256
-set tags+=/Users/crhan/.rvm/gems/ruby-1.9.3-p125/tags
+"set tags+=/Users/crhan/.rvm/gems/ruby-1.9.3-p125/tags
 nmap <leader>rr :!ctags --extra=+f --exclude=.git --exclude=log -R *
 
 
-source ~/workspace/vim.rc
+"source ~/workspace/vim.rc

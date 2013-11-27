@@ -5,7 +5,7 @@ let mapleader=","
 "set t_Co=256
 
 "if &t_Co >= 256 || has("gui_running")
-colorscheme wombat256
+"colorscheme wombat256
 "endif
 
 "if &t_Co > 2 || has("gui_running")
