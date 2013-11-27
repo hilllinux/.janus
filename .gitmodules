@@ -1,0 +1,15 @@
+[submodule "tabular"]
+	path = tabular
+	url = https://github.com/godlygeek/tabular
+[submodule "vim-powerline"]
+	path = vim-powerline
+	url = https://github.com/Lokaltog/vim-powerline
+[submodule "autoclose"]
+	path = autoclose
+	url = git://github.com/Townk/vim-autoclose.git
+[submodule "tcomment"]
+	path = tcomment
+	url = git://github.com/tomtom/tcomment_vim.git
+[submodule "winmanager"]
+	path = winmanager
+	url = https://github.com/vim-scripts/winmanager
