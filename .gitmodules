@@ -13,3 +13,6 @@
 [submodule "winmanager"]
 	path = winmanager
 	url = https://github.com/vim-scripts/winmanager
+[submodule "emmet"]
+	path = emmet
+	url = https://github.com/mattn/emmet-vim.git

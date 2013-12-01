@@ -27,3 +27,4 @@ set autoread "auto load after modified
 set tabstop=4                " 设置Tab键的宽度        [等同的空格个数]  
 set shiftwidth=4  
 set expandtab
+color desertEx
