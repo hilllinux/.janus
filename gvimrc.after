@@ -1,4 +1,4 @@
-set transparency=5
+"set transparency=5
 " start gvim without right and Left scrollbar
 set go=egma
 " 根据现在时刻显示颜色
@@ -28,3 +28,4 @@ set tabstop=4                " 设置Tab键的宽度        [等同的空格个�
 set shiftwidth=4  
 set expandtab
 color desertEx
+vmap <c-c> "+y
