@@ -9,5 +9,3 @@ set t_Co=256 " Explicitly tell Vim that the terminal supports 256 colors
 let g:Powerline_symbols = 'fancy'
 
 set guifont=Sauce\ Code\ Powerline\ for\ Powerline
-
-
