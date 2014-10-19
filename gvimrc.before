@@ -7,8 +7,5 @@ set t_Co=256 " Explicitly tell Vim that the terminal supports 256 colors
 "let g:Powerline_theme = 'solarized256'
 "let g:Powerline_colorscheme = 'solarized256'
 let g:Powerline_symbols = 'fancy'
-<<<<<<< HEAD
 
 set guifont=Sauce\ Code\ Powerline\ for\ Powerline
-=======
->>>>>>> 83603bccf0518e3445e4f0c17d5f90555e0336cd
